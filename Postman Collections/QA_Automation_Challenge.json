@@ -1,0 +1,341 @@
+{
+  "info": {
+    "_postman_id": "c05e8ab2-f6ae-4ac6-bbcc-42ac06c15541",
+    "name": "QA Automation Challenge",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "create posts",
+      "item": [
+        {
+          "name": "Add Posts",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "b57ff4ca-e5f6-48e9-a21d-8f871460e201",
+                "exec": [
+                  "const postId = 101;\r",
+                  "const jsonSchema = {\r",
+                  "        \"type\": \"object\",\r",
+                  "        \"properties\": {\r",
+                  "            \"userId\": {\r",
+                  "            \"type\": \"integer\"\r",
+                  "            },\r",
+                  "            \"id\": {\r",
+                  "            \"type\": \"integer\"\r",
+                  "            },\r",
+                  "            \"title\": {\r",
+                  "            \"type\": \"string\"\r",
+                  "            }\r",
+                  "        },\r",
+                  "        \"required\": [\r",
+                  "            \"userId\",\r",
+                  "            \"id\",\r",
+                  "            \"title\",\r",
+                  "            \"body\"\r",
+                  "        ]\r",
+                  "        };\r",
+                  "\r",
+                  "pm.test(\"Status code is 201 'Created'\", () => {\r",
+                  "    pm.response.to.have.status(201);\r",
+                  "    pm.response.to.have.status(\"Created\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Validates API contract with status 201\", () => {\r",
+                  "    pm.response.to.jsonSchema(jsonSchema);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Content-Type header is application/json\", () => {\r",
+                  "    pm.response.to.have.header(\"Content-Type\");\r",
+                  "    pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Validate returned information\", () => {\r",
+                  "    let jsonDataOut = pm.response.json();\r",
+                  "    let userIdIn = Number(pm.collectionVariables.get(\"userId\"));\r",
+                  "    let titleIn = pm.collectionVariables.get(\"registerTitle\"); \r",
+                  "    let bodyIn = pm.collectionVariables.get(\"registerBody\");\r",
+                  "    \r",
+                  "    pm.expect(userIdIn).to.eql(jsonDataOut.userId);\r",
+                  "    pm.expect(titleIn).to.eql(jsonDataOut.title);\r",
+                  "    pm.expect(bodyIn).to.eql(jsonDataOut.body);\r",
+                  "    pm.expect(postId).to.eql(jsonDataOut.id);\r",
+                  "});\r",
+                  "\r",
+                  "\r",
+                  "\r",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "_postman_id": "3d4468d1-1993-4ee3-85ca-8af1a3777a9a",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": " {\r\n    \"userId\": {{userId}},\r\n    \"title\": \"{{registerTitle}}\",\r\n    \"body\": \"{{registerBody}}\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "http://jsonplaceholder.typicode.com/posts"
+          },
+          "response": []
+        },
+        {
+          "name": "[404] - Add posts with invalid request",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "833397f4-e73f-48e3-adec-871bb0313c5c",
+                "exec": [
+                  "pm.test(\"Status code is 404 'Not Found'\", function () {\r",
+                  "    pm.response.to.have.status(404);\r",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "_postman_id": "f1dc998f-489d-4f39-afa6-9141b8ba4076",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": " {\r\n    \"userId\": {{userId}},\r\n    \"title\": \"{{registerTitle}}\",\r\n    \"body\": \"{{registerBody}}\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{base_url}}/post"
+          },
+          "response": []
+        },
+        {
+          "name": "[500] - Add posts with Internal Server Error",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "13a70b8e-cade-4fad-89e0-6543e7e1dfbf",
+                "exec": [
+                  "pm.test(\"Status code is 500 'Internal Server Error'\", function () {\r",
+                  "    pm.response.to.have.status(500);\r",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "_postman_id": "df3f5f87-dc17-4328-be39-b4a09bdb85d6",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "\"\"",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{base_url}}/posts"
+          },
+          "response": []
+        }
+      ],
+      "_postman_id": "cd77c619-3210-4431-9a37-77d6a22d111a",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "id": "fccff5f7-0d15-43ef-9e86-590842d7c027",
+            "type": "text/javascript",
+            "exec": [
+              "// TDM - Post registration endpoint data mass",
+              "",
+              "// Valid information",
+              "pm.collectionVariables.set(\"userId\", 2);",
+              "pm.collectionVariables.set(\"registerTitle\", \"lorem ipsum\");",
+              "pm.collectionVariables.set(\"registerBody\", \"lorem ipsum dolor sit amet consectetur adipiscing elit porttitor integer condimentum urna feugiat, auctor in habitasse quam dis ac netus elementum nam interdum nostra.\");",
+              ""
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "id": "d95da78c-ed0e-4403-bba2-fe62b18a2ab7",
+            "type": "text/javascript",
+            "exec": [
+              ""
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "get posts",
+      "item": [
+        {
+          "name": "List Posts",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "b3cfdd95-3c54-4426-a72c-ce6326a18ae3",
+                "exec": [
+                  "pm.test(\"Status code is 200\", () => {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "    pm.response.to.have.status(\"OK\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Content-Type header is application/json\", () => {\r",
+                  "    pm.response.to.have.header(\"Content-Type\");\r",
+                  "    pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Check if there are 100 posts\", () => {\r",
+                  "    let resp = pm.response.json();\r",
+                  "    pm.expect(100).to.eql(resp.length);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Validate number of posts per User\", () => { \r",
+                  "   let userIdAdictionary = {1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0}; \r",
+                  "   let resp = pm.response.json();  \r",
+                  "\r",
+                  "   resp.forEach(function(post) { \r",
+                  "        userIdAdictionary[post.userId]++;\r",
+                  "   });\r",
+                  "\r",
+                  "    for (const userId in userIdAdictionary) {\r",
+                  "       console.log(\"userId \"+ userId + \" = \" + userIdAdictionary[userId] + \" posts\");\r",
+                  "       pm.expect(10).to.eql(userIdAdictionary[userId]);\r",
+                  "    }\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Validate that Ids are incremented\", () => {\r",
+                  "    let resp = pm.response.json();\r",
+                  "    let count = 1;      \r",
+                  "    \r",
+                  "    resp.forEach(function(postId) {\r",
+                  "      pm.expect(count).to.eql(postId.id);\r",
+                  "      count++;\r",
+                  "    });\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Check that the title or the body is not null or blank\", () => {\r",
+                  "    let resp = pm.response.json(); \r",
+                  "\r",
+                  "    resp.forEach(function(post) {\r",
+                  "       pm.expect(post.title).not.eq(\"undefined\");\r",
+                  "       pm.expect(post.title).not.eq(\"\");\r",
+                  "       pm.expect(post.body).not.eq(\"undefined\");\r",
+                  "       pm.expect(post.body).not.eq(\"\");\r",
+                  "    });\r",
+                  "});\r",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "_postman_id": "57c8b974-6beb-48ef-ac1b-74ae21f6c0c8",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{base_url}}/posts"
+          },
+          "response": []
+        }
+      ],
+      "_postman_id": "cb217ae7-214c-4e04-9a90-926dad4eaccd"
+    }
+  ],
+  "variable": [
+    {
+      "id": "ba6b3e21-fab9-459b-888b-d2f317f745ce",
+      "key": "userId",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "id": "fc057dbd-ff0c-4c3e-aba7-bd19a018fef1",
+      "key": "id",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "id": "da153066-b054-48f4-8e13-6b71a126bc30",
+      "key": "title",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "id": "deaa7302-7bbe-4c2b-b114-2e6d58f58424",
+      "key": "body",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "id": "7cad19c1-b288-493f-bd47-968ae8f4170f",
+      "key": "userIdPostOne",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "id": "bf79c391-80bc-4b6d-9e31-6def9dff515d",
+      "key": "idPostOne",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "id": "03a4c24e-88e2-404b-9f6e-5b1f0c55c6bf",
+      "key": "titlePostOne",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "id": "6634decf-d737-4bb1-be67-9baf736955ef",
+      "key": "bodyPostOne",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "id": "75ef8a46-710e-486e-ae53-b2b837bf4fea",
+      "key": "registerTitle",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "id": "658a49cb-e0b5-4073-b0fb-b7119b660da8",
+      "key": "registerBody",
+      "value": "",
+      "type": "string"
+    }
+  ]
+}
