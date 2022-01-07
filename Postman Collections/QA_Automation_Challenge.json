@@ -271,6 +271,19 @@
             "url": "{{base_url}}/posts"
           },
           "response": []
+        },
+        {
+          "name": "New Request",
+          "id": "bbfc9cc9-e697-4990-81ac-8870ff23604e",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": null
+          },
+          "response": []
         }
       ],
       "id": "cb217ae7-214c-4e04-9a90-926dad4eaccd"
@@ -278,52 +291,52 @@
   ],
   "variable": [
     {
-      "id": "e804f632-14cd-4e51-9928-c65ace4c73a7",
+      "id": "2f4937f2-9ca2-4f23-8333-813b74d1a8c4",
       "key": "userId",
       "value": ""
     },
     {
-      "id": "fbced911-6b1c-4fc1-b21e-3517962c94bd",
+      "id": "db21fdad-92ee-4e8f-b816-9a5fcf2cd5cb",
       "key": "id",
       "value": ""
     },
     {
-      "id": "5291093d-1d3f-4ac6-8833-758921b34878",
+      "id": "f7c0b447-539a-4df1-a6dd-acdc1dd0edad",
       "key": "title",
       "value": ""
     },
     {
-      "id": "2810e4fe-dcfa-4f37-b1e8-e4defcda7310",
+      "id": "afa3b87e-cdcf-4168-b62a-0d8d0d4c8ec0",
       "key": "body",
       "value": ""
     },
     {
-      "id": "015bc6ff-bbab-416c-b352-fca2c69dcbad",
+      "id": "2dac9dd1-3fe7-49f2-94ed-8d7ea64800ef",
       "key": "userIdPostOne",
       "value": ""
     },
     {
-      "id": "57c1ffaf-8226-4697-a769-40aa823ea363",
+      "id": "06aacda5-6943-4ae5-b5da-fff2c9d15031",
       "key": "idPostOne",
       "value": ""
     },
     {
-      "id": "26f6be38-60de-4b6d-8669-0b9ab52a9bae",
+      "id": "ac4527e4-bbc0-4406-a4c4-47155eac4432",
       "key": "titlePostOne",
       "value": ""
     },
     {
-      "id": "cc831a3d-9507-4eb4-9856-60721ef3a7ac",
+      "id": "36a6e7f9-777b-403a-83b9-77234eb30255",
       "key": "bodyPostOne",
       "value": ""
     },
     {
-      "id": "50c0eb2f-689c-49f3-95f7-286c199388a0",
+      "id": "7235d661-3d3a-40a4-b397-00066216c8e5",
       "key": "registerTitle",
       "value": ""
     },
     {
-      "id": "8d456e07-564f-4411-9903-91be57d57c07",
+      "id": "04ab1716-87b4-4aa2-86ba-35dc51cbacfb",
       "key": "registerBody",
       "value": ""
     }
