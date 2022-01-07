@@ -53,8 +53,7 @@
                   "});\r",
                   "\r",
                   "pm.test(\"Validate returned information\", () => {\r",
-                  "    let jsonData = pm.response.json();\r",
-                  "    \r",
+                  "    let jsonData = pm.response.json();    \r",
                   "    let userIdIn = Number(pm.collectionVariables.get(\"userId\"));\r",
                   "    let titleIn = pm.collectionVariables.get(\"registerTitle\"); \r",
                   "    let bodyIn = pm.collectionVariables.get(\"registerBody\");\r",
@@ -302,52 +301,52 @@
   ],
   "variable": [
     {
-      "id": "ba8054a8-baa6-4110-a110-5836bfd4a524",
+      "id": "c9e93e5a-2e81-4910-b2f1-e5ab223d31a4",
       "key": "userId",
       "value": ""
     },
     {
-      "id": "26103b5b-1f17-4896-9eff-829f5770d1ba",
+      "id": "a3ea986e-96a2-49c0-b174-dace0a15000f",
       "key": "id",
       "value": ""
     },
     {
-      "id": "44ced8b5-e611-46a6-a2a5-579c885e7269",
+      "id": "8ea060b8-b44a-43f4-ba21-cad4e4c7fb8e",
       "key": "title",
       "value": ""
     },
     {
-      "id": "4a0ba748-f748-4723-b0b7-7ee2eb78b7a3",
+      "id": "06855c05-4e6a-414e-84ad-28207aa479ca",
       "key": "body",
       "value": ""
     },
     {
-      "id": "5e802ddd-15d9-498e-af65-5dee0d46eb4f",
+      "id": "1c3237df-95a0-4db1-986f-bbc5b562b47a",
       "key": "userIdPostOne",
       "value": ""
     },
     {
-      "id": "5be48502-9a54-4a7d-8ca1-ab2f26ccf5be",
+      "id": "bd1e4f90-fde6-43a9-af55-e04d69291561",
       "key": "idPostOne",
       "value": ""
     },
     {
-      "id": "aa5df7b4-081e-4741-92d5-e205966a6427",
+      "id": "5dd39910-aba7-4293-b64d-9ee3392670a2",
       "key": "titlePostOne",
       "value": ""
     },
     {
-      "id": "633635d4-c45f-4c60-b076-d48a5c031567",
+      "id": "e654e987-6d4f-4b22-86f5-65e5db98f789",
       "key": "bodyPostOne",
       "value": ""
     },
     {
-      "id": "a5471c81-ccc1-4f6d-9154-1fa7a6aec4dc",
+      "id": "f91290ec-e0f6-4610-aadf-e44428aefc43",
       "key": "registerTitle",
       "value": ""
     },
     {
-      "id": "65b1297c-c5a6-43bf-b442-f220c25d9ce7",
+      "id": "797e58a2-76e3-4470-9639-31abb40b4472",
       "key": "registerBody",
       "value": ""
     }
