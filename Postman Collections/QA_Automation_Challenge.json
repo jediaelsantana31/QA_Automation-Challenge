@@ -84,7 +84,7 @@
                 }
               }
             },
-            "url": "http://jsonplaceholder.typicode.com/posts"
+            "url": "{{base_url}}/posts"
           },
           "response": []
         },
@@ -301,52 +301,52 @@
   ],
   "variable": [
     {
-      "id": "4db03fa1-77f9-4774-a4bc-bd9a3774f0cb",
+      "id": "9fecc00e-3862-4990-9652-6c3d02c8f9cb",
       "key": "userId",
       "value": ""
     },
     {
-      "id": "9d98b038-5ea3-43a0-a86b-5926205d6ede",
+      "id": "690bdb78-8cfe-4aea-a970-3968c220ca20",
       "key": "id",
       "value": ""
     },
     {
-      "id": "cab108aa-17ce-4eb4-b246-0eafbc979394",
+      "id": "d96361a1-0807-4185-a97a-39ccfa307b32",
       "key": "title",
       "value": ""
     },
     {
-      "id": "9366e0d2-369e-4075-8b50-9b29cefdef69",
+      "id": "9394377e-e5d6-4035-9939-cfcf656a6368",
       "key": "body",
       "value": ""
     },
     {
-      "id": "85be28ea-36d6-4829-9c50-0fa8e9fb792a",
+      "id": "bc48610f-0988-43df-87f4-9dc70a86a058",
       "key": "userIdPostOne",
       "value": ""
     },
     {
-      "id": "82ec7357-f66c-4a42-b146-c39615e999d4",
+      "id": "3297e1a0-aa9a-449a-af9d-49f9872e34fa",
       "key": "idPostOne",
       "value": ""
     },
     {
-      "id": "b0e85309-c6db-4cb2-9910-96bd52af8206",
+      "id": "4c282411-135d-4797-9cf0-dade9b997e14",
       "key": "titlePostOne",
       "value": ""
     },
     {
-      "id": "f07267d3-8e07-4ea8-99b1-f5b58a7279fc",
+      "id": "24138015-d209-4767-a110-d8e5dbe7b72a",
       "key": "bodyPostOne",
       "value": ""
     },
     {
-      "id": "9ed221e5-85c1-4421-af23-5728adb5a00b",
+      "id": "94c75264-43d7-43a8-8c2d-7b176908f713",
       "key": "registerTitle",
       "value": ""
     },
     {
-      "id": "9979f50e-2ea2-4ef1-9ea0-aa86b02e810b",
+      "id": "7ff5ec6d-37e4-4584-83e6-44de719a1afb",
       "key": "registerBody",
       "value": ""
     }
