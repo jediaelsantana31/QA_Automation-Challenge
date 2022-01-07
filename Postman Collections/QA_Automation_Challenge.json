@@ -273,7 +273,7 @@
           "response": []
         },
         {
-          "name": "New Request",
+          "name": "[404] - List posts with invalid request",
           "id": "bbfc9cc9-e697-4990-81ac-8870ff23604e",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
@@ -291,52 +291,52 @@
   ],
   "variable": [
     {
-      "id": "160727f0-bb0a-4051-9c32-71799abb1de7",
+      "id": "03046fc5-5110-4fb1-9e43-288d62d22a9d",
       "key": "userId",
       "value": ""
     },
     {
-      "id": "f995ecf6-95d3-4f5a-b572-b79e4f54e5b2",
+      "id": "6324ea72-4d50-4a7a-9f58-f26a518c799f",
       "key": "id",
       "value": ""
     },
     {
-      "id": "00aa38b3-989d-4058-aee2-9c3fe1fa3d42",
+      "id": "f7bfea3d-d0a0-4ff9-8734-87dd9fbb4b7c",
       "key": "title",
       "value": ""
     },
     {
-      "id": "497d3fb7-d2d2-47b4-9641-c3e4f53afc3f",
+      "id": "6acd7658-6573-49f2-aa21-604657069e3e",
       "key": "body",
       "value": ""
     },
     {
-      "id": "dbd16a9e-9084-4b67-ab34-20e18538ca9b",
+      "id": "3fcb0086-9d83-48c9-b012-f7ba52ed05e1",
       "key": "userIdPostOne",
       "value": ""
     },
     {
-      "id": "23e330b3-009d-458b-83f1-069b0a905cfa",
+      "id": "1d15a4ae-32aa-4b83-b588-9d3151c9bb41",
       "key": "idPostOne",
       "value": ""
     },
     {
-      "id": "e3a2b997-8823-40a1-b68f-b0ca9de4b602",
+      "id": "8e4aceb4-2508-4a15-b696-bb87df9a274f",
       "key": "titlePostOne",
       "value": ""
     },
     {
-      "id": "47de75c1-c13c-4b09-a9aa-831997a35d17",
+      "id": "4fec9d05-c2bb-4016-aea5-722307c4818c",
       "key": "bodyPostOne",
       "value": ""
     },
     {
-      "id": "a06be432-5b4a-450c-88d1-9df9f9190642",
+      "id": "a4762a58-8195-4691-b3b1-5b4a6ca98e44",
       "key": "registerTitle",
       "value": ""
     },
     {
-      "id": "76c4ce43-5d3c-46ff-ae4a-f5a555a4fa0a",
+      "id": "fc91f56a-5d29-4c53-97dd-14819019baac",
       "key": "registerBody",
       "value": ""
     }
