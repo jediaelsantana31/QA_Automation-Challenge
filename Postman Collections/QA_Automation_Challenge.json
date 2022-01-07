@@ -274,136 +274,56 @@
         }
       ],
       "id": "cb217ae7-214c-4e04-9a90-926dad4eaccd"
-    },
-    {
-      "name": "get posts Copy",
-      "item": [
-        {
-          "name": "List Posts",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "b8532fb2-439a-4d5c-beea-d458264a08e3",
-                "exec": [
-                  "pm.test(\"Status code is 200\", () => {\r",
-                  "    pm.response.to.have.status(200);\r",
-                  "    pm.response.to.have.status(\"OK\");\r",
-                  "});\r",
-                  "\r",
-                  "pm.test(\"Content-Type header is application/json\", () => {\r",
-                  "    pm.response.to.have.header(\"Content-Type\");\r",
-                  "    pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');\r",
-                  "});\r",
-                  "\r",
-                  "pm.test(\"Check if there are 100 posts\", () => {\r",
-                  "    let resp = pm.response.json();\r",
-                  "    pm.expect(100).to.eql(resp.length);\r",
-                  "});\r",
-                  "\r",
-                  "pm.test(\"Validate number of posts per User\", () => { \r",
-                  "   let userIdAdictionary = {1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0, 10:0}; \r",
-                  "   let resp = pm.response.json();  \r",
-                  "\r",
-                  "   resp.forEach(function(post) { \r",
-                  "        userIdAdictionary[post.userId]++;\r",
-                  "   });\r",
-                  "\r",
-                  "    for (const userId in userIdAdictionary) {\r",
-                  "       console.log(\"userId \"+ userId + \" = \" + userIdAdictionary[userId] + \" posts\");\r",
-                  "       pm.expect(10).to.eql(userIdAdictionary[userId]);\r",
-                  "    }\r",
-                  "});\r",
-                  "\r",
-                  "pm.test(\"Validate that Ids are incremented\", () => {\r",
-                  "    let resp = pm.response.json();\r",
-                  "    let count = 1;      \r",
-                  "    \r",
-                  "    resp.forEach(function(postId) {\r",
-                  "      pm.expect(count).to.eql(postId.id);\r",
-                  "      count++;\r",
-                  "    });\r",
-                  "});\r",
-                  "\r",
-                  "pm.test(\"Check that the title or the body is not null or blank\", () => {\r",
-                  "    let resp = pm.response.json(); \r",
-                  "\r",
-                  "    resp.forEach(function(post) {\r",
-                  "       pm.expect(post.title).not.eq(\"undefined\");\r",
-                  "       pm.expect(post.title).not.eq(\"\");\r",
-                  "       pm.expect(post.body).not.eq(\"undefined\");\r",
-                  "       pm.expect(post.body).not.eq(\"\");\r",
-                  "    });\r",
-                  "});\r",
-                  ""
-                ],
-                "type": "text/javascript"
-              }
-            }
-          ],
-          "id": "2a8d0205-4f57-4ac1-964f-b530031d8231",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": "{{base_url}}/posts"
-          },
-          "response": []
-        }
-      ],
-      "id": "fee9f378-f1cb-46e0-8519-c12706e2c443"
     }
   ],
   "variable": [
     {
-      "id": "27ad1ab2-076b-44b9-ba9a-1b9f0b5d4f20",
+      "id": "6f59b84d-c9e6-4b2c-a885-0cd40f500d1a",
       "key": "userId",
       "value": ""
     },
     {
-      "id": "84844970-e5d5-47c9-a03a-64d8af748f18",
+      "id": "d4583125-e19c-4183-88c3-b6aae36b9060",
       "key": "id",
       "value": ""
     },
     {
-      "id": "24208611-ed41-4dcc-b81d-7e778195c47b",
+      "id": "7e5f0dea-798c-4645-a0b3-2641ecde7b88",
       "key": "title",
       "value": ""
     },
     {
-      "id": "feb4f15b-36be-4931-921b-6656e0f644df",
+      "id": "fc8eb7f7-b681-479f-8fe0-c719940b26a6",
       "key": "body",
       "value": ""
     },
     {
-      "id": "0256c648-4407-4801-8a46-f999777de523",
+      "id": "f5912906-a969-4f08-b40b-6ccf40e6c033",
       "key": "userIdPostOne",
       "value": ""
     },
     {
-      "id": "860b1b9d-330d-4669-8127-da5734a1c9d6",
+      "id": "267ea41b-60de-4eb2-8d1e-37e609c0357d",
       "key": "idPostOne",
       "value": ""
     },
     {
-      "id": "ec322e11-509d-40a8-ae73-375b72999cc1",
+      "id": "7b48cc40-4134-4f69-93ee-1a9add9712fe",
       "key": "titlePostOne",
       "value": ""
     },
     {
-      "id": "ff41df6c-ff9d-4ecc-acdc-de9d8ef6bf43",
+      "id": "b00eb868-36b0-479f-be99-c8503aa10cf8",
       "key": "bodyPostOne",
       "value": ""
     },
     {
-      "id": "f7edcfbb-5f3c-47ad-bee4-7f3c64e625d6",
+      "id": "96906547-3d73-4186-88eb-c1650b8ed3d3",
       "key": "registerTitle",
       "value": ""
     },
     {
-      "id": "c48fd347-fd01-4209-b857-3adce86acd5b",
+      "id": "f1f9e953-396d-47e1-8f81-48f837e51fff",
       "key": "registerBody",
       "value": ""
     }
