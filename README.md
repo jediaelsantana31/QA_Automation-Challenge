@@ -32,6 +32,7 @@ npm install -g newman-reporter-html
 newman run QA_Automation_Challenge.json -e QA_Automation_Challenge.postman_environment.json
 ```
 ##### Gerar relatório
+
 ```
 newman run QA_Automation_Challenge.json -e QA_Automation_Challenge.postman_environment.json
 ```
