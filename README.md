@@ -12,31 +12,32 @@ Desenvolvimento de scripts de automação para validar as apis de cadastro e lis
 
 * Postman
 * Node.js
-* Newman (Para executar via linha de comando)
+* Newman 
 
 ## 🔧 Executando os testes
  
 #### Execução por linha de comando
 
+Baixar o projeto e abrir o cmd no diretório "PostmanCollections".
+
 ##### Configuração
 
-Com o Node.js instalado, abrir o cmd e executar o comando os comandos abaixo para configurar a execução e geração de relatório:
+Para executar os casos de testes precisaremos realizar as instalações dos plugins abaixo:
 
 ```
 npm install -g newman
 npm install -g newman-reporter-html
+npm install -g newman-reporter-htmlextra
 ```
-##### Execução do teste
+Execução gerando relatório simples
 
 ```
-newman run QA_Automation_Challenge.json -e QA_Automation_Challenge.postman_environment.json
+newman run QA_Automation_Challenge.json -e QA_Automation_Challenge.postman_environment.json -r html
 ```
-##### Gerar relatório
-
+Execução gerando relatório detalhado
 ```
-newman run QA_Automation_Challenge.json -e QA_Automation_Challenge.postman_environment.json
+newman run QA_Automation_Challenge.json -e QA_Automation_Challenge.postman_environment.json -r htmlextra --reporter-htmlextra-title "QA Automation Challenge"
 ```
-
 
 #### Execução no Postman
 
@@ -44,3 +45,6 @@ newman run QA_Automation_Challenge.json -e QA_Automation_Challenge.postman_envir
 * Selecionar a coleção.
 * Clicar no botão Run. 
 
+### 🔩 Reports das execuções
+
+Os reports são gerados no diretório "PostmanCollections\newman" do projeto. 
